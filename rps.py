@@ -19,6 +19,7 @@ def main():
     global win_counter
     global draw_counter
     global loss_counter
+    global total_matches
 
     cls()
     print(f"{prefix}\n")
