@@ -2,54 +2,69 @@ import os
 import time
 import random
 
-# made by splars#1252
+# rps game made by splars#1252
 cls = lambda: os.system("cls" if os.name == "nt" else "clear")
-os.system("title rps v1.2" if os.name == "nt" else "pass")
+sleep = lambda: os.system("timeout 3 >nul" if os.name == "nt" else time.sleep(3))
+os.system("title rps game made by splars#1252" if os.name == "nt" else "pass")
 os.system("color c" if os.name == "nt" else "pass")
 
 rps = ["rock", "paper", "scissors"]
-
-prefix = "rps game made by splars#1252\nrps game v1.2"
+prefix = "rps game v1.2"
 
 def main():
-    os.system("cls")
+    cls()
     print(f"{prefix}\n")
 
-    print("Rock")
-    print("Paper")
-    print("Scissors")
+    print("A: Rock")
+    print("B: Paper")
+    print("C: Scissors")
 
-    x = input("\n>> ").lower()
+    choice = input("\n>> ").lower()
+    if not choice:
+        main()
+
+    if choice == "a":
+        choice = "rock"
+    elif choice == "b":
+        choice = "paper"
+    elif choice == "c":
+        choice = "scissors"
+
+    if choice not in rps:
+        print("\nYou did not make a valid selection.")
+        sleep()
+        main()
+
     comp = random.choice(rps)
 
-    if x == "rock" and comp == "scissors":
-        print("You: " + str(x) + "\n\nvs\n\n" + "Computer: " + str(comp))
+    if   choice == "rock" and comp == "scissors":
+        print(f"You: {choice}\n\nvs.\n\nComputer: {comp}")
         print("\n\nResults: You win.")
-        time.sleep(3)
+        sleep()
         main()
     
-    elif x == "paper" and comp == "rock":
-        print("You: " + str(x) + "\n\nvs\n\n" + "Computer: " + str(comp))
+    elif choice == "paper" and comp == "rock":
+        print(f"You: {choice}\n\nvs.\n\nComputer: {comp}")
         print("\n\nResults: You win.")
-        time.sleep(3)
+        sleep()
         main()
 
-    elif x == "scissors" and comp == "paper":
-        print("You: " + str(x) + "\n\nvs\n\n" + "Computer: " + str(comp))
+    elif choice == "scissors" and comp == "paper":
+        print(f"You: {choice}\n\nvs.\n\nComputer: {comp}")
         print("\n\nResults: You win.")
-        time.sleep(3)
+        sleep()
         main()
         
-    elif x == comp:
-        print("You: " + str(x) + "\n\nvs\n\n" + "Computer: " + str(comp))
+    elif choice == comp:
+        print(f"You: {choice}\n\nvs.\n\nComputer: {comp}")
         print("\n\nResults: Draw.")
-        time.sleep(3)
+        sleep()
         main()
 
     else:
-        print("You: " + str(x) + "\n\nvs\n\n" + "Computer: " + str(comp))
+        print(f"You: {choice}\n\nvs.\n\nComputer: {comp}")
         print("\n\nResults: You lose.")
-        time.sleep(3)
+        sleep()
         main()
 
 main()
