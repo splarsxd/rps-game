@@ -52,6 +52,7 @@ def main():
         print("\n\nResults: You win.")
         sleep()
         win_counter += 1
+        total_matches += 1
         main()
     
     elif choice == "paper" and comp == "rock":
@@ -59,6 +60,7 @@ def main():
         print("\n\nResults: You win.")
         sleep()
         win_counter += 1
+        total_matches += 1
         main()
 
     elif choice == "scissors" and comp == "paper":
@@ -66,6 +68,7 @@ def main():
         print("\n\nResults: You win.")
         sleep()
         win_counter += 1
+        total_matches += 1
         main()
         
     elif choice == comp:
@@ -73,6 +76,7 @@ def main():
         print("\n\nResults: Draw.")
         sleep()
         draw_counter += 1
+        total_matches += 1
         main()
 
     else:
@@ -80,6 +84,7 @@ def main():
         print("\n\nResults: You lose.")
         sleep()
         loss_counter += 1
+        total_matches += 1
         main()
 
 main()
