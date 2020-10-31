@@ -13,6 +13,7 @@ prefix = "rps game v1.2"
 win_counter = 0
 draw_counter = 0
 loss_counter = 0
+total_matches = 0
 
 def main():
     global win_counter
@@ -21,6 +22,7 @@ def main():
 
     cls()
     print(f"{prefix}\n")
+    print(f"Total: {total_matches}")
     print(f"Wins: {win_counter} | Draws: {draw_counter} | Losses: {loss_counter}\n")
 
     print("A: Rock")
