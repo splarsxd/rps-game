@@ -10,10 +10,18 @@ os.system("color c" if os.name == "nt" else "pass")
 
 rps = ["rock", "paper", "scissors"]
 prefix = "rps game v1.2"
+win_counter = 0
+draw_counter = 0
+loss_counter = 0
 
 def main():
+    global win_counter
+    global draw_counter
+    global loss_counter
+
     cls()
     print(f"{prefix}\n")
+    print(f"Wins: {win_counter} | Draws: {draw_counter} | Losses: {loss_counter}\n")
 
     print("A: Rock")
     print("B: Paper")
@@ -37,34 +45,39 @@ def main():
 
     comp = random.choice(rps)
 
-    if   choice == "rock" and comp == "scissors":
+    if choice == "rock" and comp == "scissors":
         print(f"You: {choice}\n\nvs.\n\nComputer: {comp}")
         print("\n\nResults: You win.")
         sleep()
+        win_counter += 1
         main()
     
     elif choice == "paper" and comp == "rock":
         print(f"You: {choice}\n\nvs.\n\nComputer: {comp}")
         print("\n\nResults: You win.")
         sleep()
+        win_counter += 1
         main()
 
     elif choice == "scissors" and comp == "paper":
         print(f"You: {choice}\n\nvs.\n\nComputer: {comp}")
         print("\n\nResults: You win.")
         sleep()
+        win_counter += 1
         main()
         
     elif choice == comp:
         print(f"You: {choice}\n\nvs.\n\nComputer: {comp}")
         print("\n\nResults: Draw.")
         sleep()
+        draw_counter += 1
         main()
 
     else:
         print(f"You: {choice}\n\nvs.\n\nComputer: {comp}")
         print("\n\nResults: You lose.")
         sleep()
+        loss_counter += 1
         main()
 
 main()
