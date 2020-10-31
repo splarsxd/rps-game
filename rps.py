@@ -23,8 +23,8 @@ def main():
 
     cls()
     print(f"{prefix}\n")
-    print(f"Total: {total_matches}")
-    print(f"Wins: {win_counter} | Draws: {draw_counter} | Losses: {loss_counter}\n")
+    print(f"Wins: {win_counter} | Draws: {draw_counter} | Losses: {loss_counter}")
+    print(f"          Total: {total_matches}\n")
 
     print("A: Rock")
     print("B: Paper")
